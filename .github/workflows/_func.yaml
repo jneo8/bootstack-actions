@@ -102,7 +102,7 @@ jobs:
       - name: Show juju information
         run: |
           juju version
-          juju controllers
+          juju controllers | grep Version -A 1 | awk '{print $9}'
       - name: Run tests with `${{ matrix.command }}`
         working-directory: ${{ inputs.working-directory }}
         run: ${{ matrix.command }}
