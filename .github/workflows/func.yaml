@@ -142,7 +142,7 @@ jobs:
           sudo apt update -yqq
           sudo apt remove -qy lxd
           if [[ $(cat /etc/os-release | grep VERSION_CODENAME) == *"focal"* ]]; then
-            suod apt remove -qy lxd-client
+            sudo apt remove -qy lxd-client
           fi
           sudo snap install lxd --channel ${{ inputs.lxd-channel }}
           sudo lxd waitready
